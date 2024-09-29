@@ -84,6 +84,20 @@ const user2 = [
 ]
 
 user2[1].name
-console.log(Object.keys(tinderuser))
-console.log(Object.values(tinderuser))
-console.log(tinderuser.hasOwnProperty('location')) // this property helps to check that it has that keys or not 
+// console.log(Object.keys(tinderuser))
+// console.log(Object.values(tinderuser))
+// console.log(tinderuser.hasOwnProperty('location')) // this property helps to check that it has that keys or not 
+
+const course  = {
+    coursename : "js in hindi",
+    date:"29-08-2024",
+    instructor:"pradip"
+}
+console.log(course.coursename) // this what we are used to print
+
+//this also helps to print the elements 
+//this is how we destruct the code
+const {date:d} = course
+console.log(d)
+
+// when we look curly braces with small braces then we can assume that we destructing 
