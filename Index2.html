@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body style="background-color: green;">
+    
+</body>
+<script>
+    const div = document.createElement('h1')
+    console.log(div)
+    div.className = "main"
+    div.id = Math.round(Math.random() * 10+1)
+    div.innerHTML = "My name is Pradip"
+    // const text = document.createTextNode("My name is Pradip Sah sonar")
+    // div.appendChild(text)
+    document.body.appendChild(div)
+</script>
+</html>
