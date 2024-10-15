@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object model</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Java</li>
+    </ul>
+</body>
+<script>
+    function lang(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    lang('js')
+    lang('go')
+    lang('rust')
+
+
+    // edit 
+    const sec = document.querySelector("li:nth-child(2)")
+    // sec.innerHTML = "python"  we use this only not the below one to edit the element
+    const newli  = document.createElement('li')
+    newli.textContent = "python"
+    sec.replaceWith(newli)
+
+
+    // edit 
+    const first = document.querySelector("li:first-child")
+    first.outerHTML = "<li> c </li>"
+
+
+    //remove
+    const lastremove = document.querySelector('li:last-child')
+    lastremove.remove()
+</script>
+</html>
