@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color changer</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+            border: 2px solid red;
+            overflow:hidden;
+            position: relative;
+        }
+        .project{
+           display: flex;
+           justify-content: space-around;
+           align-items: center;
+           position: relative;
+           
+        }
+        .project-link{
+            height: 200px;
+            width: 200px;
+            border:2px solid rgb(59, 215, 213);
+            position: relative;
+            top: 100px;
+        }
+        #red{
+            background-color: red;
+        }
+        #blue{
+            background-color: blue;
+        }
+        #black{
+            background-color: black;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Color changer</h1>
+    <div class="project">
+        <div class="project-link" id="black">Black </div>
+        <div class="project-link" id="red">Red</div>
+        <div class="project-link"id="blue"> Blue</div>
+    </div>
+    <script>
+        const btn = document.querySelectorAll('.project-link')
+        const body = document.querySelector('body')
+        btn.forEach(function(btn){
+            console.log(btn);
+            btn.addEventListener('click' ,function(e){
+            //    console.log(e);
+               console.log(e.target)
+               if(e.target.id==='red'){
+                body.style.background = e.target.id;
+               }
+               if(e.target.id==='black'){
+                body.style.background = e.target.id;
+               }
+               if(e.target.id==='blue'){
+                body.style.background = e.target.id;
+               }
+            })
+
+        });
+    </script>
+</body>
+</html>
