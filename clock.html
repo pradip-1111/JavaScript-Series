@@ -50,11 +50,7 @@
         <div id="time"></div>
     </div>
     <script>
-        const clock = document.getElementById('time')
-
-        let date = new Date();
-        let time1 = date.toLocaleTimeString();
-        time.innerHTML  = time1;
+        const clock = document.getElementById('time');
         setInterval(function(){
             const now = new Date();
             const time1 = now.toLocaleTimeString('en-US', { hour12: true });
