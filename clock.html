@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(172, 129, 50);
+            height: 100vh;
+            width: 100vw;
+
+        }
+        .center{
+            height: 20%;
+            width:20%;
+            /* border: 2px solid red;   */
+            position: relative;
+            top: 250px;
+            left: 500px;    
+        }
+        .banner{
+            font-size: 1.3rem;
+            font-weight: bolder;
+            text-align: center;
+        }
+        #time{
+            margin-top: 15px;
+            margin-left: 25px;
+            height: 50%;
+            width:80%;
+            border: 2px solid red; 
+            background-color: cadetblue; 
+            text-align: center;
+            font-size: 1.5rem;
+            padding: 10px;
+            font-weight: bolder;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="banner"><span>The local time</span></div>
+        <div id="time"></div>
+    </div>
+    <script>
+        const clock = document.getElementById('time')
+
+        let date = new Date();
+        let time1 = date.toLocaleTimeString();
+        time.innerHTML  = time1;
+        setInterval(function(){
+            const now = new Date();
+            const time1 = now.toLocaleTimeString('en-US', { hour12: true });
+            const milliseconds = String(now.getMilliseconds()).padStart(3, '0'); 
+
+            time.innerHTML  = `${time1} ${milliseconds}`;
+        },10);
+    </script>
+</body>
+</html>
