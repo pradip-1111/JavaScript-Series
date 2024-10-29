@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        .list{
+            height: 200px;
+            width: auto;
+            border: 2px solid red;
+        }
+        li {
+            height: 20px;
+            width: auto; 
+            margin-top: 30px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="list">
+        <ul id="num">
+            <li ><span id="first">first</span></li>
+            <li ><span id="second">second</span></li>
+            <li ><span id="third">third</span></li> 
+            <li ><span id="fourth">fourth</span></li>
+        </ul>
+    </div>
+    <script>
+        // document.getElementById('second').onclick = function(){
+        //     alert("hello second")
+        // }
+
+
+        // document.getElementById('third').addEventListener('click', function(e) {
+        //     // alert("Hello, guys!");
+        //     console.log("this is third")
+        //     e.stopPropagation()
+        // },false);
+        // document.getElementById('list').addEventListener('click', function(e) {
+        //     console.log("this is list item")
+        // },false);
+
+
+
+        document.querySelector('#num').addEventListener('click',function(e){
+            console.log(e.target.tagName);
+            if(e.target.tagName === 'SPAN'){
+                console.log(e.target.id);
+                let removeit  = e.target.parentNode
+                removeit.remove()
+            }
+        })
+
+
+
+
+
+
+
+
+
+        // type , timestamp ,  defaultPrevented
+        // target , toelement , srcelement , currenttarget
+        // clientx , clienty , screenx , screeny
+        // altkey , ctrlkey , shiftkey , keycode 
+    </script>
+</body>
+</html>
