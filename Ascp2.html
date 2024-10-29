@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code</title>
+</head>
+<body>
+    <h1>Code with Dai</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let interval;
+    document.querySelector('#start').addEventListener('click',function(){
+        interval = setInterval(function(){
+            console.log("toh kaise hai aap log",Date.now())
+        },1000);
+    });
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(interval)
+        console.log('stopped')
+    })
+</script>
+</html>

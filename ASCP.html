@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code</title>
+</head>
+<body>
+    <h1>Code with Fun</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const dai = function(){
+        console.log("Pradip")
+    }
+    setTimeout(dai,2000)
+
+    const changeetxt = function(){
+        document.querySelector('h1').innerHTML= "pradip Dai ko coding"
+    }
+    const set = setTimeout(changeetxt,2000)
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(set)
+        console.log('stopped')
+    })
+</script>
+</html>
