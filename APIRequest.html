@@ -1,0 +1,100 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API REQUEST</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const request = 'https://api.github.com/users/pradip-1111'
+    const xhr = new XMLHttpRequest()
+    xhr.open('Get',request)
+    // console.log('here i am')
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState ===4){
+            const data =JSON.parse(this.responseText);
+            console.log(typeof data)
+            console.log(data.avatar_url)
+        }
+    }
+    xhr.send()
+</script>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Avatar Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    #avatarCard {
+      display: none; 
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 200px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #avatarCard img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button id="showAvatarBtn">Show My Avatar</button>
+
+
+  <div id="avatarCard">
+    <img id="avatarImage" src="" alt="Avatar">
+    <p id="username"></p>
+  </div>
+
+  <script>
+    const button = document.getElementById('showAvatarBtn');
+    const avatarCard = document.getElementById('avatarCard');
+    const avatarImage = document.getElementById('avatarImage');
+    const username = document.getElementById('username');
+
+    const apiURL = 'https://api.github.com/users/pradip-1111';
+
+    button.addEventListener('click', () => {
+      fetch(apiURL)
+        .then(response => response.json())
+        .then(data => {
+          avatarImage.src = data.avatar_url;
+          username.textContent = data.login;
+
+          avatarCard.style.display = 'block';
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    });
+  </script>
+</body>
+</html>
